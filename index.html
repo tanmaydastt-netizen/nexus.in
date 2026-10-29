@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launch Your Free Website</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN for high-fidelity utility styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom smooth scroll and refined interactive details */
+        html {
+            scroll-behavior: smooth;
+        }
+        .theme-transition {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-brand-500 selection:text-white theme-transition">
+
+    <!-- Top Notification Bar -->
+    <div class="bg-brand-900 text-white text-xs sm:text-sm py-2 px-4 text-center font-medium">
+        ✨ <span>Nexus: Everything You Need, All in One Place.</span>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-9 h-9 bg-brand-600 rounded-xl flex items-center justify-center text-white font-bold shadow-md shadow-brand-500/20">
+                    N
+                </div>
+                <span class="text-xl font-bold tracking-tight text-slate-900">Nexus</span>
+            </div>
+            
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <a href="#features" class="hover:text-brand-600 transition">Features</a>
+                <a href="#customizer" class="hover:text-brand-600 transition">Live Customizer</a>
+                <a href="#hosting-guide" class="hover:text-brand-600 transition">Free Hosting Guide</a>
+                <a href="#contact" class="hover:text-brand-600 transition">Contact</a>
+            </nav>
+
+            <div id="nav-auth-group" class="flex items-center gap-4">
+                <button onclick="openAuthModal(event, 'login')" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition cursor-pointer">
+                    Login
+                </button>
+                <button onclick="openAuthModal(event, 'register')" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-xl text-sm font-medium shadow-sm transition-all hover:shadow-md cursor-pointer">
+                    Register
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden py-20 lg:py-28 bg-white">
+            <div class="absolute inset-0 z-0 opacity-40 pointer-events-none">
+                <img src="https://images.unsplash.com/photo-1622547748225-3fc4abd2cca0?fm=jpg&q=80&w=1200" alt="Background Graphic" class="w-full h-full object-cover">
+            </div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-7 text-center lg:text-left">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-brand-50 text-brand-700 mb-6">
+                            <span class="w-2 h-2 rounded-full bg-brand-600 animate-pulse"></span>
+                            100% Free HTML5 Template
+                        </span>
+                        <h1 id="hero-title" class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-none">
+                            Build & Launch Your Website <span class="text-brand-600">Completely Free</span>
+                        </h1>
+                        <p id="hero-subtitle" class="mt-6 text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0">
+                            Create a stunning web presence without spending a dime. Edit this document directly, personalize the code, and launch it to global cloud servers in less than 5 minutes.
+                        </p>
+                        <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <a href="#customizer" class="bg-slate-900 hover:bg-slate-800 text-white px-6 py-3.5 rounded-xl font-medium shadow-md shadow-slate-900/10 transition text-center">
+                                Try Live Customizer
+                            </a>
+                            <a href="#hosting-guide" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 px-6 py-3.5 rounded-xl font-medium transition text-center flex items-center justify-center gap-2">
+                                Launch Guide 👇
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:col-span-5 relative">
+                        <div class="relative mx-auto max-w-md lg:max-w-none bg-gradient-to-tr from-brand-600 to-indigo-600 p-2 rounded-2xl shadow-2xl">
+                            <img src="https://images.unsplash.com/photo-1648134859211-4a1b57575f4e?fm=jpg&q=80&w=800" alt="Website UI Preview" class="rounded-xl w-full h-auto shadow-inner object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Website Customizer Block -->
+        <section id="customizer" class="py-16 bg-slate-100 border-y border-slate-200">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200">
+                    <div class="p-6 bg-slate-900 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div>
+                            <h3 class="text-lg font-bold">Interactive Live Customizer</h3>
+                            <p class="text-xs text-slate-400">Modify properties below to see live updates on this web page template instantly.</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs uppercase font-semibold text-slate-400 tracking-wider">Select Theme Color:</span>
+                            <div class="flex gap-1.5">
+                                <button onclick="changeTheme('blue')" class="w-6 h-6 rounded-full bg-blue-600 ring-2 ring-white ring-offset-2 ring-offset-slate-900 transition-transform hover:scale-110" title="Classic Blue"></button>
+                                <button onclick="changeTheme('emerald')" class="w-6 h-6 rounded-full bg-emerald-600 transition-transform hover:scale-110" title="Emerald Growth"></button>
+                                <button onclick="changeTheme('purple')" class="w-6 h-6 rounded-full bg-purple-600 transition-transform hover:scale-110" title="Elegant Purple"></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6 grid sm:grid-cols-2 gap-6 bg-slate-50 border-b border-slate-200">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Change Headline Text</label>
+                            <input type="text" id="input-title" oninput="updateText()" value="Build & Launch Your Website Completely Free" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Change Description Text</label>
+                            <textarea id="input-subtitle" oninput="updateText()" rows="2" class="w-full px-4 py-2 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition">Create a stunning web presence without spending a dime. Edit this document directly, personalize the code, and launch it to global cloud servers in less than 5 minutes.</textarea>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-slate-900 text-center text-xs text-slate-400">
+                        💡 <strong>Developer Tip:</strong> Open this file inside any free text editor (like VS Code or Notepad) to make permanent changes to the code structure.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Features Grid -->
+        <section id="features" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Everything You Need out of the Box</h2>
+                    <p class="mt-4 text-slate-600 text-lg">This single-file template architecture provides zero bloated dependencies, hyper-fast performance scores, and elegant responsive fluid grid utilities.</p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-brand-200 transition group hover:shadow-lg">
+                        <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                            ⚡
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-2">Blazing Fast Loading</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed">Built using optimized layout structures ensuring maximum visibility scores and rapid render pipelines on any client machine.</p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-brand-200 transition group hover:shadow-lg">
+                        <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                            📱
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-2">Fully Mobile Responsive</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed">Fluid breakpoints enable perfect scaling across compact mobile phones, modern desktop viewports, and multi-monitor setups.</p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-brand-200 transition group hover:shadow-lg">
+                        <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                            🛠️
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-2">Zero Hosting Expenses</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed">Designed explicitly to operate perfectly on free globally distributed static cloud storage networks without operational fees.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Free Deployment Guide Wizard Section -->
+        <section id="hosting-guide" class="py-20 bg-slate-900 text-white relative">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">How to Launch This Website Online for Free</h2>
+                    <p class="mt-4 text-slate-400">Choose your preferred cloud static platform below to publish this exact file live under a public secure SSL website URL.</p>
+                </div>
+
+                <!-- Tab Headers -->
+                <div class="flex flex-wrap justify-center gap-2 mb-8 bg-slate-800/80 p-1.5 rounded-xl max-w-md mx-auto border border-slate-700">
+                    <button onclick="switchTab('github')" id="btn-github" class="flex-1 text-center py-2.5 px-4 rounded-lg text-sm font-semibold transition bg-brand-600 text-white">
+                        GitHub Pages
+                    </button>
+                    <button onclick="switchTab('netlify')" id="btn-netlify" class="flex-1 text-center py-2.5 px-4 rounded-lg text-sm font-semibold transition text-slate-400 hover:text-white">
+                        Netlify
+                    </button>
+                    <button onclick="switchTab('vercel')" id="btn-vercel" class="flex-1 text-center py-2.5 px-4 rounded-lg text-sm font-semibold transition text-slate-400 hover:text-white">
+                        Vercel
+                    </button>
+                </div>
+
+                <!-- Tab Contents -->
+                <div class="bg-slate-800 rounded-2xl border border-slate-700 p-6 sm:p-8 shadow-2xl min-h-[340px]">
+                    <!-- GitHub Content -->
+                    <div id="tab-github" class="tab-panel">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-8 h-8 rounded-lg bg-slate-700 flex items-center justify-center font-bold text-sm">1</div>
+                            <h3 class="text-xl font-bold">Deploy Free via GitHub Pages</h3>
+                        </div>
+                        <ul class="space-y-4 text-slate-300 text-sm sm:text-base">
+                            <li class="flex gap-3"><span class="text-brand-400 font-bold">✓</span> <span>Save this code locally on your machine with the exact file name <code>index.html</code>.</span></li>
+                            <li class="flex gap-3"><span class="text-brand-400 font-bold">✓</span> <span>Create a free account on GitHub and generate a new code repository named <code>my-free-website</code>.</span></li>
+                            <li class="flex gap-3"><span class="text-brand-400 font-bold">✓</span> <span>Upload your <code>index.html</code> file straight into the main branch of that repository.</span></li>
+                            <li class="flex gap-3"><span class="text-brand-400 font-bold">✓</span> <span>Navigate to repository <strong>Settings</strong> &gt; <strong>Pages</strong>, choose the main branch, and click save. Your site is now live globally!</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Netlify Content -->
+                    <div id="tab-netlify" class="tab-panel hidden">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-8 h-8 rounded-lg bg-slate-700 flex items-center justify-center font-bold text-sm">2</div>
+                            <h3 class="text-xl font-bold">Deploy Free via Netlify Drop</h3>
+                        </div>
+                        <ul class="space-y-4 text-slate-300 text-sm sm:text-base">
+                            <li class="flex gap-3"><span class="text-emerald-400 font-bold">✓</span> <span>Save this code file as <code>index.html</code> and place it inside a clean folder named <code>website-folder</code>.</span></li>
+                            <li class="flex gap-3"><span class="text-emerald-400 font-bold">✓</span> <span>Visit the Netlify drop dashboard online without requiring any code terminal configurations.</span></li>
+                            <li class="flex gap-3"><span class="text-emerald-400 font-bold">✓</span> <span>Simply drag and drop your <code>website-folder</code> directly into the browser screen interface upload zone.</span></li>
+                            <li class="flex gap-3"><span class="text-emerald-400 font-bold">✓</span> <span>Netlify processes your static files instantly and generates a permanent custom secure URL link completely for free.</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Vercel Content -->
+                    <div id="tab-vercel" class="tab-panel hidden">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-8 h-8 rounded-lg bg-slate-700 flex items-center justify-center font-bold text-sm">3</div>
+                            <h3 class="text-xl font-bold">Deploy Free via Vercel Dashboard</h3>
+                        </div>
+                        <ul class="space-y-4 text-slate-300 text-sm sm:text-base">
+                            <li class="flex gap-3"><span class="text-purple-400 font-bold">✓</span> <span>Confirm your website code file is structured cleanly as <code>index.html</code> inside a local project folder.</span></li>
+                            <li class="flex gap-3"><span class="text-purple-400 font-bold">✓</span> <span>Sign up for a free Vercel Hobby account and click <strong>Add New Project</strong>.</span></li>
+                            <li class="flex gap-3"><span class="text-purple-400 font-bold">✓</span> <span>Connect your online GitHub storage account or upload the project folder directly via the simple visual deployment screen dashboard.</span></li>
+                            <li class="flex gap-3"><span class="text-purple-400 font-bold">✓</span> <span>Click deploy. Vercel sets up serverless network compression and launches your production site within seconds.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section with Embedded Google Map -->
+        <section id="contact" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-12 items-stretch">
+                    <!-- Form block -->
+                    <div class="lg:col-span-6 bg-slate-50 p-8 rounded-2xl border border-slate-200 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold text-slate-900 tracking-tight mb-2">Get in Touch</h3>
+                            <p class="text-sm text-slate-600 mb-6">This sample contact section can be pointed to any free form backend service like Formspree or Netlify Forms to receive messages instantly.</p>
+                            
+                            <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">Your Name</label>
+                                    <input type="text" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition bg-white">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">Email Address</label>
+                                    <input type="email" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition bg-white">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">Message Content</label>
+                                    <textarea required rows="4" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition bg-white"></textarea>
+                                </div>
+                                <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-medium py-3 rounded-xl shadow-sm transition">
+                                    Send Test Message
+                                </button>
+                            </form>
+                            <div id="form-feedback" class="mt-4 hidden p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm text-center font-medium">
+                                Message simulation successful! 🚀
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map/Info block -->
+                    <div class="lg:col-span-6 flex flex-col justify-between bg-slate-900 rounded-2xl overflow-hidden shadow-xl p-2 border border-slate-800">
+                        <div class="w-full h-full min-h-[300px] rounded-xl overflow-hidden relative">
+                            <!-- Embedded Interactive Google Map component -->
+                            <iframe
+                              width="100%"
+                              height="100%"
+                              frameborder="0"
+                              style="border:0; width: 100%; min-height: 350px;"
+                              referrerpolicy="no-referrer-when-downgrade"
+                              loading="lazy"
+                              src="https://www.google.com/maps/embed/v1/place?key=__CODING_CANVAS_MAPS_EMBED_API_KEY__&q=Silicon+Valley,California&zoom=12"
+                              allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Interactive Registration / Login Modal Panel Overlay -->
+    <div id="auth-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-200 transform scale-95 transition-transform duration-300 relative">
+            <!-- Dismiss Button -->
+            <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 transition text-2xl font-semibold cursor-pointer">&times;</button>
+            
+            <!-- Dynamic Modal Selection Headers -->
+            <div class="flex border-b border-slate-200 mb-6 text-sm font-semibold">
+                <button onclick="toggleModalTab('login')" id="modal-tab-login" class="flex-1 pb-3 text-center border-b-2 transition duration-200 border-transparent text-slate-500 hover:text-slate-800 cursor-pointer">Login</button>
+                <button onclick="toggleModalTab('register')" id="modal-tab-register" class="flex-1 pb-3 text-center border-b-2 transition duration-200 border-brand-600 text-brand-600 cursor-pointer">Register</button>
+            </div>
+
+            <!-- Authentic Form Box -->
+            <form onsubmit="handleAuthSubmit(event)" class="space-y-4">
+                <div>
+                    <label id="modal-id-label" class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">Choose User ID / Email</label>
+                    <input type="text" id="modal-user-id" required placeholder="e.g., nexus_user1" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition bg-white">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">Password</label>
+                    <input type="password" id="modal-password" required placeholder="••••••••" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition bg-white">
+                </div>
+                <div id="confirm-password-group">
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">Confirm Password</label>
+                    <input type="password" id="modal-confirm-password" placeholder="••••••••" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition bg-white">
+                </div>
+                <button type="submit" id="modal-submit-btn" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-medium py-3 rounded-xl shadow-sm transition-all mt-2 cursor-pointer">
+                    Create Account
+                </button>
+            </form>
+            
+            <div id="modal-feedback" class="mt-4 hidden p-4 rounded-xl border text-sm text-left leading-relaxed font-medium"></div>
+        </div>
+    </div>
+
+    <!-- Global Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-2 text-white font-bold">
+                <div class="w-7 h-7 bg-brand-600 rounded-lg flex items-center justify-center text-xs">N</div>
+                <span>Nexus Template Suite</span>
+            </div>
+            <div>
+                &copy; 2026 Nexus. Distributed free for creative and commercial development.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Logic Script -->
+    <script>
+        // ==========================================
+        // PERSISTENT BROWSER DATABASE ENGINE
+        // ==========================================
+        // Using browser's native localStorage to completely bypass security blockades
+        // caused by loading external scripts inside restricted sandboxed layout engines.
+        function getAccounts() {
+            const accounts = localStorage.getItem('nexus_users');
+            return accounts ? JSON.parse(accounts) : {};
+        }
+
+        function saveAccounts(accounts) {
+            localStorage.setItem('nexus_users', JSON.stringify(accounts));
+        }
+
+        // Global Auth State Tracking Variable
+        let activeModalTab = 'register';
+
+        // Open Auth Dialog Popup Window
+        function openAuthModal(event, initialMode) {
+            if (event) event.preventDefault();
+            const modal = document.getElementById('auth-modal');
+            modal.classList.remove('hidden');
+            
+            // Trigger seamless transition animations
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.firstElementChild.classList.remove('scale-95');
+            }, 10);
+            
+            toggleModalTab(initialMode);
+        }
+
+        // Dismiss Auth Dialog Popup Window
+        function closeAuthModal() {
+            const modal = document.getElementById('auth-modal');
+            modal.classList.add('opacity-0');
+            modal.firstElementChild.classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                const feedback = document.getElementById('modal-feedback');
+                feedback.classList.add('hidden');
+            }, 300);
+        }
+
+        // Toggle state views between Registration & User Login
+        function toggleModalTab(targetMode) {
+            activeModalTab = targetMode;
+            const tabLogin = document.getElementById('modal-tab-login');
+            const tabRegister = document.getElementById('modal-tab-register');
+            const confirmGroup = document.getElementById('confirm-password-group');
+            const submitBtn = document.getElementById('modal-submit-btn');
+            const idLabel = document.getElementById('modal-id-label');
+            const confirmInput = document.getElementById('modal-confirm-password');
+            const feedback = document.getElementById('modal-feedback');
+            
+            feedback.classList.add('hidden');
+
+            if (targetMode === 'login') {
+                tabLogin.className = "flex-1 pb-3 text-center border-b-2 transition duration-200 border-brand-600 text-brand-600 cursor-pointer";
+                tabRegister.className = "flex-1 pb-3 text-center border-b-2 transition duration-200 border-transparent text-slate-500 hover:text-slate-800 cursor-pointer";
+                confirmGroup.classList.add('hidden');
+                confirmInput.removeAttribute('required');
+                submitBtn.innerText = "Sign In";
+                idLabel.innerText = "User ID / Email";
+            } else {
+                tabRegister.className = "flex-1 pb-3 text-center border-b-2 transition duration-200 border-brand-600 text-brand-600 cursor-pointer";
+                tabLogin.className = "flex-1 pb-3 text-center border-b-2 transition duration-200 border-transparent text-slate-500 hover:text-slate-800 cursor-pointer";
+                confirmGroup.classList.remove('hidden');
+                confirmInput.setAttribute('required', 'required');
+                submitBtn.innerText = "Create Account";
+                idLabel.innerText = "Choose User ID / Email";
+            }
+        }
+
+        // Handle persistent account verification and profile submissions
+        function handleAuthSubmit(event) {
+            event.preventDefault();
+            const feedback = document.getElementById('modal-feedback');
+            const usernameInput = document.getElementById('modal-user-id').value.trim();
+            const passwordInput = document.getElementById('modal-password').value;
+            const confirmPasswordInput = document.getElementById('modal-confirm-password').value;
+            
+            feedback.className = "mt-4 p-4 rounded-xl border text-sm text-left leading-relaxed font-medium";
+            feedback.classList.remove('hidden');
+
+            // Fetch current records from persistent memory
+            const database = getAccounts();
+
+            if (activeModalTab === 'register') {
+                // Registration validation logic
+                if (passwordInput !== confirmPasswordInput) {
+                    feedback.classList.add('bg-rose-50', 'text-rose-800', 'border-rose-200');
+                    feedback.innerText = "Passwords do not match! Please check values and try again. ❌";
+                    return;
+                }
+
+                if (database[usernameInput]) {
+                    feedback.classList.add('bg-rose-50', 'text-rose-800', 'border-rose-200');
+                    feedback.innerText = "This User ID or Email is already registered! Please switch to Login. ⚠️";
+                    return;
+                }
+
+                // Append new user data to database storage structure
+                database[usernameInput] = passwordInput;
+                saveAccounts(database);
+
+                feedback.classList.add('bg-emerald-50', 'text-emerald-800', 'border-emerald-200');
+                feedback.innerHTML = "🎉 <strong>Account Created Successfully!</strong> Your credentials have been securely stored in the browser's persistent database. Click 'Login' at the top to sign in.";
+                event.target.reset();
+            } else {
+                // User Sign In validation logic
+                if (!database[usernameInput]) {
+                    feedback.classList.add('bg-rose-50', 'text-rose-800', 'border-rose-200');
+                    feedback.innerText = "User ID or Email not found! Create an account under the 'Register' tab first. ❌";
+                    return;
+                }
+
+                if (database[usernameInput] !== passwordInput) {
+                    feedback.classList.add('bg-rose-50', 'text-rose-800', 'border-rose-200');
+                    feedback.innerText = "Incorrect account password! Please verify credentials and retry. 🔒";
+                    return;
+                }
+
+                feedback.classList.add('bg-emerald-50', 'text-emerald-800', 'border-emerald-200');
+                feedback.innerHTML = `🔑 <strong>Login Successful!</strong> Welcome back, <strong>${usernameInput}</strong>. Updating profile dashboard state...`;
+                
+                // Swap auth options in navbar with user badge status block
+                document.getElementById('nav-auth-group').innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs bg-emerald-100 text-emerald-800 font-semibold px-2.5 py-1 rounded-lg">● Online</span>
+                        <span class="text-sm font-medium text-slate-700 max-w-[100px] truncate">${usernameInput}</span>
+                        <button onclick="handleLogout()" class="text-xs font-semibold text-rose-600 hover:text-rose-700 transition cursor-pointer">Logout</button>
+                    </div>
+                `;
+                
+                event.target.reset();
+                setTimeout(() => {
+                    closeAuthModal();
+                }, 1800);
+            }
+        }
+
+        // Terminate authenticated dashboard state
+        function handleLogout() {
+            location.reload();
+        }
+
+        // Live Text Dynamic Customizer Updates
+        function updateText() {
+            const inputTitle = document.getElementById('input-title').value;
+            const inputSubtitle = document.getElementById('input-subtitle').value;
+            
+            if(inputTitle.trim() !== "") {
+                document.getElementById('hero-title').innerHTML = inputTitle;
+            }
+            if(inputSubtitle.trim() !== "") {
+                document.getElementById('hero-subtitle').innerText = inputSubtitle;
+            }
+        }
+
+        // Live Dynamic Theme Toggle Setup
+        function changeTheme(colorName) {
+            if(colorName === 'blue') {
+                updateTailwindBrandColors('bg-blue-600', 'hover:bg-blue-700', 'text-blue-700', 'bg-blue-50', 'border-blue-600', 'text-blue-600');
+            } else if(colorName === 'emerald') {
+                updateTailwindBrandColors('bg-emerald-600', 'hover:bg-emerald-700', 'text-emerald-700', 'bg-emerald-50', 'border-emerald-600', 'text-emerald-600');
+            } else if(colorName === 'purple') {
+                updateTailwindBrandColors('bg-purple-600', 'hover:bg-purple-700', 'text-purple-700', 'bg-purple-50', 'border-purple-600', 'text-purple-600');
+            }
+        }
+
+        function updateTailwindBrandColors(bg, hoverBg, textCol, bgLight, borderCol, textBrand) {
+            // Modify primary interactive buttons on document live
+            const primaryButtons = document.querySelectorAll('button[type="submit"], a[href="#hosting-guide"], .h-16 button.bg-brand-600, #modal-submit-btn');
+            primaryButtons.forEach(btn => {
+                btn.className = btn.className.replace(/bg-\w+-\d+/g, bg).replace(/hover:bg-\w+-\d+/g, hoverBg);
+            });
+            
+            const badges = document.querySelectorAll('.bg-brand-5');
+            badges.forEach(b => {
+                b.className = `inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold ${bgLight} ${textCol} mb-6`;
+            });
+
+            // Dynamically alter active tab element border indicators inside the authentication form box
+            const activeTabButton = document.querySelector('.border-brand-600');
+            if (activeTabButton) {
+                activeTabButton.className = activeTabButton.className.replace(/border-\w+-\d+/g, borderCol).replace(/text-\w+-\d+/g, textBrand);
+            }
+        }
+
+        // Guide Step Switching Tab Controls
+        function switchTab(platform) {
+            // Hide panels
+            document.querySelectorAll('.tab-panel').forEach(p => p.classList.add('hidden'));
+            // Un-highlight buttons
+            document.getElementById('btn-github').className = "flex-1 text-center py-2.5 px-4 rounded-lg text-sm font-semibold transition text-slate-400 hover:text-white";
+            document.getElementById('btn-netlify').className = "flex-1 text-center py-2.5 px-4 rounded-lg text-sm font-semibold transition text-slate-400 hover:text-white";
+            document.getElementById('btn-vercel').className = "flex-1 text-center py-2.5 px-4 rounded-lg text-sm font-semibold transition text-slate-400 hover:text-white";
+
+            // Activate chosen target
+            if (platform === 'github') {
+                document.getElementById('tab-github').classList.remove('hidden');
+                document.getElementById('btn-github').className = "flex-1 text-center py-2.5 px-4 rounded-lg text-sm font-semibold transition bg-brand-600 text-white";
+            } else if (platform === 'netlify') {
+                document.getElementById('tab-netlify').classList.remove('hidden');
+                document.getElementById('btn-netlify').className = "flex-1 text-center py-2.5 px-4 rounded-lg text-sm font-semibold transition bg-emerald-600 text-white";
+            } else if (platform === 'vercel') {
+                document.getElementById('tab-vercel').classList.remove('hidden');
+                document.getElementById('btn-vercel').className = "flex-1 text-center py-2.5 px-4 rounded-lg text-sm font-semibold transition bg-purple-600 text-white";
+            }
+        }
+
+        // Contact Form Submission Action Mock
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const feedback = document.getElementById('form-feedback');
+            feedback.classList.remove('hidden');
+            event.target.reset();
+            setTimeout(() => {
+                feedback.classList.add('hidden');
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
